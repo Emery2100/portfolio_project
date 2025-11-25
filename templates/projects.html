@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="projects-wrapper">
+
+    <h1 class="projects-title">My Projects</h1>
+
+    <div class="projects-grid">
+        {% for p in projects %}
+        <div class="project-card">
+
+            {% if p.image %}
+                <img src="{{ p.image.url }}" alt="{{ p.title }}" class="project-image">
+            {% endif %}
+
+            <div class="project-info">
+                <h3 class="project-title">{{ p.title }}</h3>
+
+                <p class="project-summary">
+                    {{ p.summary|truncatechars:200 }}
+                </p>
+
+                <div class="project-links">
+                    {% if p.live_url %}
+                    <a href="{{ p.live_url }}" target="_blank" class="btn-project">Live Demo</a>
+                    {% endif %}
+
+                    {% if p.repo_url %}
+                    <a href="{{ p.repo_url }}" target="_blank" class="btn-project-outline">GitHub Repo</a>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

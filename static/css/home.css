@@ -1,0 +1,127 @@
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 4px solid #2e8b57;
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+}
+
+.hero-resume-btn {
+    background-color: #2e8b57;
+    padding: 12px 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 2px solid #256f46;
+}
+
+.hero-resume-btn:hover {
+    background-color: #256f46;
+    transform: translateY(-3px);
+}
+
+.hero-right {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    color: #2e8b57;
+}
+
+.hero-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.home-divider {
+    border-color: #666;
+    margin: 40px 0;
+}
+
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2e8b57;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background: #cccbcb;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-img {
+    width: 100%;
+    height: 170px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    color: #2e8b57;
+    margin-bottom: 10px;
+}
+
+.project-summary {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.project-btn {
+    background-color: #2e8b57;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.project-btn:hover {
+    background-color: #256f46;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        text-align: center;
+    }
+}

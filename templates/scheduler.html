@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/scheduler.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Schedule an Appointment</h1>
+
+<div id="calendar"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+<script>
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let c of cookies) {
+      c = c.trim();
+      if (c.startsWith(name + '=')) {
+        cookieValue = decodeURIComponent(c.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Scheduler JS Loaded");
+
+  var calendarEl = document.getElementById('calendar');
+  console.log("Calendar element:", calendarEl);
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'timeGridWeek',
+    selectable: true,
+
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'timeGridWeek,timeGridDay'
+    },
+
+    events: '/api/appointments/',
+
+    select: function(info) {
+      const name = prompt("Your name:");
+      const email = prompt("Your email:");
+      if (!name || !email) return;
+
+      fetch('/api/appointments/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          start: info.startStr,
+          end: info.endStr
+        })
+      })
+      .then(r => r.json())
+      .then(data => {
+        calendar.addEvent({
+          id: data.id,
+          title: data.name,
+          start: data.start,
+          end: data.end
+        });
+        alert("Appointment booked!");
+      });
+    }
+  });
+
+  calendar.render();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="hero-container">
+
+    <!-- Left: Portrait + Resume Button -->
+    <div class="hero-left">
+        <img src="{% static 'img/Me.jpg' %}"
+             alt="Portrait of David Emery"
+             class="hero-image">
+
+        <a href="{% static 'files/resume.docx' %}" download class="hero-resume-btn">
+            ⬇ Download Resume
+        </a>
+    </div>
+
+    <!-- Right: Text -->
+    <div class="hero-right">
+        <h1 class="hero-title">Greetings - I'm David Emery</h1>
+
+        <p class="hero-text">
+            I'm a full-stack developer who enjoys creating modern,
+            responsive, and clean web applications using Django, Python,
+            and JavaScript. Explore my recent work, learn more about my
+            background, or schedule an appointment.
+        </p>
+    </div>
+
+</div>
+
+<hr class="home-divider">
+
+<h2 class="section-title">Recent Projects</h2>
+
+<div class="projects-grid">
+    {% for p in recent_projects %}
+    <div class="project-card">
+
+        {% if p.image %}
+        <img src="{{ p.image.url }}" alt="{{ p.title }}" class="project-img">
+        {% endif %}
+
+        <h3 class="project-title">{{ p.title }}</h3>
+        <p class="project-summary">{{ p.summary|truncatechars:120 }}</p>
+
+        <a href="{% url 'projects' %}" class="project-btn">View Projects</a>
+
+    </div>
+    {% empty %}
+        <p>No projects added yet.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Me{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="about-wrapper">
+
+    <div class="about-photo">
+        <img src="{% static 'img/Army.jpg' %}" alt="David Emery">
+    </div>
+
+    <div class="about-text">
+        <h1>About Me</h1>
+
+        <p>
+            I am an aspiring <strong>Software Engineer</strong> with experience across a wide range of programming
+            languages and a strong drive to keep learning and improving my craft.
+        </p>
+
+        <p>
+            Currently, I work as an <strong>Internet Sales Manager</strong> at a car dealership, where I've built
+            excellent communication skills, attention to detail, and the ability to problem-solve in fast-paced environments.
+        </p>
+
+        <p>
+            Before my transition into tech, I proudly served as a <strong>Combat Engineer</strong> in the U.S. Army. This experience
+            shaped my discipline, resilience, and commitment to overcoming challenges — qualities that fuel my growth
+            as a developer.
+        </p>
+
+        <p>
+            Combining technical curiosity, military discipline, and strong customer-focused communication,
+            I bring a unique perspective to every project and continue striving toward becoming the best software engineer I can be.
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact & Schedule{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+<!-- FullCalendar v5 -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="contact-layout">
+
+    <!-- CONTACT FORM -->
+    <div class="contact-left">
+        <h1>Contact Me</h1>
+
+        {% if message_sent %}
+        <div class="alert alert-success modern-alert">Your message has been sent!</div>
+        {% endif %}
+
+        <form method="POST" class="contact-form">
+            {% csrf_token %}
+
+            <div class="form-group-modern">
+                <label>Name</label>
+                {{ contact_form.name }}
+            </div>
+
+            <div class="form-group-modern">
+                <label>Email</label>
+                {{ contact_form.email }}
+            </div>
+
+            <div class="form-group-modern">
+                <label>Message</label>
+                {{ contact_form.message }}
+            </div>
+
+            <div class="button-row">
+                <button type="submit" name="send_contact" class="btn btn-primary modern-btn">Send</button>
+                <button type="reset" class="btn btn-secondary modern-btn-secondary">Clear</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- APPOINTMENT SCHEDULING -->
+    <div class="contact-right">
+
+        <h1>Schedule Appointment</h1>
+
+        {% if appointment_created %}
+        <div class="alert alert-success modern-alert">Your appointment has been scheduled!</div>
+        {% endif %}
+
+        <div id="calendar"></div>
+
+        <!-- Appointment Form -->
+        <form method="POST" id="appointment-form" class="appointment-modern d-none">
+            {% csrf_token %}
+
+            <h3>Selected Date & Time</h3>
+
+            <div class="form-group-modern">
+                <label>Date</label>
+                <input type="text" id="display-date" disabled>
+            </div>
+
+            <div class="form-group-modern">
+                <label for="appt-time">Choose a time:</label>
+                <select id="appt-time" class="time-select"></select>
+            </div>
+
+            <!-- Django form fields (name, email, etc.) -->
+            <div class="form-group-modern">
+                <label>Your Name</label>
+                {{ appointment_form.name }}
+            </div>
+
+            <div class="form-group-modern">
+                <label>Your Email</label>
+                {{ appointment_form.email }}
+            </div>
+
+            <!-- Hidden fields actually submitted -->
+            <input type="hidden" name="date" id="appointment-date">
+            <input type="hidden" name="time" id="appointment-time">
+
+            <button type="submit" name="schedule_appointment" class="btn btn-success modern-btn center-btn">
+                Confirm Appointment
+            </button>
+        </form>
+
+        <h2 class="subheader">Upcoming Appointments</h2>
+        {% if appointments %}
+            <ul class="appointment-list">
+            {% for a in appointments %}
+                <li>
+                    <strong>{{ a.name }}</strong> — {{ a.date }} @ {{ a.time }}
+                    <br><small>{{ a.email }}</small>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+        <p class="no-appointments">No appointments yet.</p>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const calendarEl = document.getElementById("calendar");
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: "dayGridMonth",
+        selectable: true,
+        events: "/appointments/json/",
+
+        dateClick: function (info) {
+
+            fetch("/appointments/json/")
+                .then(res => res.json())
+                .then(existing => {
+
+                    const booked = existing.filter(e => e.start.startsWith(info.dateStr));
+                    const bookedTimes = booked.map(b => b.start.substring(11, 16));
+
+                    document.getElementById("appointment-date").value = info.dateStr;
+                    document.getElementById("display-date").value = info.dateStr;
+                    document.getElementById("appointment-form").classList.remove("d-none");
+
+                    updateTimeSlots(bookedTimes);
+                });
+        },
+
+        eventDidMount: function (info) {
+            info.el.style.backgroundColor = "#2e8b57";
+            info.el.style.color = "white";
+            info.el.style.border = "none";
+        }
+    });
+
+    calendar.render();
+
+    function updateTimeSlots(bookedTimes) {
+        const select = document.getElementById("appt-time");
+        select.innerHTML = "";
+
+        const allTimes = [
+            "09:00", "10:00", "11:00",
+            "12:00", "13:00", "14:00",
+            "15:00", "16:00"
+        ];
+
+        allTimes.forEach(time => {
+            const option = document.createElement("option");
+            option.value = time;
+
+            if (bookedTimes.includes(time)) {
+                option.textContent = `${time} — BOOKED`;
+                option.disabled = true;
+            } else {
+                option.textContent = time;
+            }
+
+            select.appendChild(option);
+        });
+
+        // Save selection to hidden field
+        select.addEventListener("change", () => {
+            document.getElementById("appointment-time").value = select.value;
+        });
+
+        // Pre-select first available time
+        const firstAvailable = allTimes.find(t => !bookedTimes.includes(t));
+        if (firstAvailable) {
+            select.value = firstAvailable;
+            document.getElementById("appointment-time").value = firstAvailable;
+        }
+    }
+
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // If Django view added ?success=1, we reset the form
+    if (urlParams.get("success") === "1") {
+        const apptForm = document.getElementById("appointment-form");
+        if (apptForm) {
+            apptForm.reset();
+            apptForm.classList.add("d-none");
+        }
+    }
+});
+</script>
+
+{% endblock %}

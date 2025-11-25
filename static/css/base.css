@@ -1,0 +1,110 @@
+body {
+    background-color: #9e9e9e;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #9e9e9e !important;
+    border-bottom: none !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2e8b57 !important;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #2e8b57 !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #2e8b57;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #2e8b57;
+    border-color: #2e8b57;
+}
+
+.btn-primary:hover {
+    background-color: #256f46;
+    border-color: #256f46;
+}
+
+.btn-success {
+    background-color: #2e8b57;
+    border-color: #2e8b57;
+}
+
+.btn-success:hover {
+    background-color: #256f46;
+    border-color: #256f46;
+}
+
+/* Cards & Containers */
+.container {
+    background: #cccbcb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+footer {
+    background-color: #9e9e9e !important;
+    color: #9e9e9e;
+    font-size: 0.9rem;
+}
+
+footer small {
+    color: #333;
+}
+
+/* Calendar Styling */
+#calendar {
+    background-color: #9e9e9e;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Event items in FullCalendar */
+.fc-event {
+    background-color: #2e8b57 !important;
+    border: none !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 5px !important;
+}
+
+/* Hover effect */
+.fc-event:hover {
+    background-color: #256f46 !important;
+}
+
+/* Grey-out booked dates */
+.fc-daygrid-day.fc-day.fc-booked {
+    background-color: #efefef !important;
+    pointer-events: none;
+}
+
+.d-none {
+    display: none !important;
+}

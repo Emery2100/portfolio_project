@@ -1,0 +1,74 @@
+.contact-layout {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-left,
+.contact-right {
+    flex: 1;
+    background: #dcdcdc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group-modern {
+    margin-bottom: 15px;
+}
+
+.form-group-modern label {
+    font-weight: bold;
+    color: #2e8b57;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-group-modern input,
+.form-group-modern textarea,
+.time-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    font-size: 1rem;
+    background: white;
+}
+
+#calendar {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #b8b8b8;
+    margin-bottom: 20px;
+}
+
+.center-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.appointment-list li {
+    background: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid #c1c1c1;
+}
+
+.subheader {
+    margin-top: 25px;
+    color: #2e8b57;
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .contact-layout {
+        flex-direction: column;
+    }
+}

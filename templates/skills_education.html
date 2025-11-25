@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/skills_education.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="skills-edu-wrapper">
+
+    <section class="skills-section">
+        <h1 class="section-title">Skills</h1>
+
+        <div class="skills-grid">
+            {% for s in skills %}
+            <div class="skill-card">
+                <span class="skill-name">{{ s.name }}</span>
+                {% if s.level %}
+                <span class="skill-level">{{ s.level }}</span>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="education-section">
+        <h1 class="section-title">Education</h1>
+
+        <div class="edu-list">
+            {% for e in education %}
+            <div class="edu-card">
+                <h3 class="edu-degree">{{ e.degree }}</h3>
+                <p class="edu-school">{{ e.institution }}</p>
+                <p class="edu-years">{{ e.start_year }}{% if e.end_year %} – {{ e.end_year }}{% endif %}</p>
+                <p class="edu-description">{{ e.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+{% endblock %}
+
