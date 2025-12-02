@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Contact & Schedule{% endblock %}
+{% block title %}{% trans "Contact & Schedule" %}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/contact.css' %}">
@@ -18,44 +19,42 @@
 
     <!-- CONTACT FORM -->
     <div class="contact-left">
-        <h1>Contact Me</h1>
+        <h1>{% trans "Contact Me" %}</h1>
 
         {% if message_sent %}
-        <div class="alert alert-success modern-alert">Your message has been sent!</div>
+        <div class="alert alert-success modern-alert">{% trans "Your message has been sent!" %}</div>
         {% endif %}
 
         <form method="POST" class="contact-form">
             {% csrf_token %}
 
             <div class="form-group-modern">
-                <label>Name</label>
+                <label>{% trans "Name" %}</label>
                 {{ contact_form.name }}
             </div>
 
             <div class="form-group-modern">
-                <label>Email</label>
+                <label>{% trans "Email" %}</label>
                 {{ contact_form.email }}
             </div>
 
             <div class="form-group-modern">
-                <label>Message</label>
+                <label>{% trans "Message" %}</label>
                 {{ contact_form.message }}
             </div>
 
             <div class="button-row">
-                <button type="submit" name="send_contact" class="btn btn-primary modern-btn">Send</button>
-                <button type="reset" class="btn btn-secondary modern-btn-secondary">Clear</button>
+                <button type="submit" name="send_contact" class="btn btn-primary modern-btn">{% trans "Send" %}</button>
+                <button type="reset" class="btn btn-secondary modern-btn-secondary">{% trans "Clear" %}</button>
             </div>
         </form>
     </div>
-
     <!-- APPOINTMENT SCHEDULING -->
     <div class="contact-right">
 
-        <h1>Schedule Appointment</h1>
-
+        <h1>{% trans "Schedule Appointment" %}</h1>
         {% if appointment_created %}
-        <div class="alert alert-success modern-alert">Your appointment has been scheduled!</div>
+        <div class="alert alert-success modern-alert">{% trans "Your appointment has been scheduled!" %}</div>
         {% endif %}
 
         <div id="calendar"></div>
@@ -64,26 +63,26 @@
         <form method="POST" id="appointment-form" class="appointment-modern d-none">
             {% csrf_token %}
 
-            <h3>Selected Date & Time</h3>
+            <h3>{% trans "Selected Date & Time" %}</h3>
 
             <div class="form-group-modern">
-                <label>Date</label>
+                <label>{% trans "Date" %}</label>
                 <input type="text" id="display-date" disabled>
             </div>
 
             <div class="form-group-modern">
-                <label for="appt-time">Choose a time:</label>
+                <label for="appt-time">{% trans "Choose a time:" %}</label>
                 <select id="appt-time" class="time-select"></select>
             </div>
 
             <!-- Django form fields (name, email, etc.) -->
             <div class="form-group-modern">
-                <label>Your Name</label>
+                <label>{% trans "Your Name" %}</label>
                 {{ appointment_form.name }}
             </div>
 
             <div class="form-group-modern">
-                <label>Your Email</label>
+                <label>{% trans "Your Email" %}</label>
                 {{ appointment_form.email }}
             </div>
 
@@ -92,11 +91,11 @@
             <input type="hidden" name="time" id="appointment-time">
 
             <button type="submit" name="schedule_appointment" class="btn btn-success modern-btn center-btn">
-                Confirm Appointment
+                {% trans "Confirm Appointment" %}
             </button>
         </form>
 
-        <h2 class="subheader">Upcoming Appointments</h2>
+        <h2 class="subheader">{% trans "Upcoming Appointments" %}</h2>
         {% if appointments %}
             <ul class="appointment-list">
             {% for a in appointments %}

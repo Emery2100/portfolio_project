@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}About Me{% endblock %}
+{% block title %}{% trans "About Me" %}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
@@ -16,28 +17,36 @@
     </div>
 
     <div class="about-text">
-        <h1>About Me</h1>
+        <h1>{% trans "About Me" %}</h1>
 
         <p>
-            I am an aspiring <strong>Software Engineer</strong> with experience across a wide range of programming
-            languages and a strong drive to keep learning and improving my craft.
-        </p>
+    {% blocktrans trimmed %}
+I am an aspiring Software Engineer with experience across a wide range of programming
+languages and a strong drive to keep learning and improving my craft.
+    {% endblocktrans %}
+</p>
 
-        <p>
-            Currently, I work as an <strong>Internet Sales Manager</strong> at a car dealership, where I've built
-            excellent communication skills, attention to detail, and the ability to problem-solve in fast-paced environments.
-        </p>
+<p>
+    {% blocktrans trimmed %}
+Currently, I work as an Internet Sales Manager at a car dealership, where I've built
+excellent communication skills, attention to detail, and the ability to problem-solve in fast-paced environments.
+    {% endblocktrans %}
+</p>
 
-        <p>
-            Before my transition into tech, I proudly served as a <strong>Combat Engineer</strong> in the U.S. Army. This experience
-            shaped my discipline, resilience, and commitment to overcoming challenges — qualities that fuel my growth
-            as a developer.
-        </p>
+<p>
+    {% blocktrans trimmed %}
+Before my transition into tech, I proudly served as a Combat Engineer in the U.S. Army. This experience
+shaped my discipline, resilience, and commitment to overcoming challenges — qualities that fuel my growth
+as a developer.
+    {% endblocktrans %}
+</p>
 
-        <p>
-            Combining technical curiosity, military discipline, and strong customer-focused communication,
-            I bring a unique perspective to every project and continue striving toward becoming the best software engineer I can be.
-        </p>
+<p>
+    {% blocktrans trimmed %}
+Combining technical curiosity, military discipline, and strong customer-focused communication,
+I bring a unique perspective to every project and continue striving toward becoming the best software engineer I can be.
+    {% endblocktrans %}
+</p>
 
     </div>
 

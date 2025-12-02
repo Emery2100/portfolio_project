@@ -56,7 +56,6 @@ DATABASES = {
     }
 }
 
-LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'America/Los_Angeles'
 USE_I18N = True
 USE_TZ = True
@@ -68,3 +67,17 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'emery2100@gmail.com'
+
+
+LANGUAGE_CODE = 'en'
+
+USE_I18N = True
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / 'main'/'locale',
+]

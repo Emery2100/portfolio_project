@@ -1,0 +1,150 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es\n"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "About"
+msgstr "Sobre mí"
+
+msgid "About Me"
+msgstr "Sobre mí"
+
+msgid "Projects"
+msgstr "Proyectos"
+
+msgid "Skills"
+msgstr "Habilidades"
+
+msgid "Education"
+msgstr "Educación"
+
+msgid "Skills & Education"
+msgstr "Habilidades y Educación"
+
+msgid "Contact"
+msgstr "Contacto"
+
+msgid "My Portfolio"
+msgstr "Mi Portafolio"
+
+msgid "View projects"
+msgstr "Ver proyectos"
+
+msgid "Github"
+msgstr "Github"
+
+msgid "Repo"
+msgstr "Repositorio"
+
+msgid "Download Resume"
+msgstr "Descargar Currículum"
+
+msgid "Welcome"
+msgstr "Bienvenido"
+
+msgid ""
+"Hi — I'm David Emery. Welcome to my portfolio. Here are some recent projects:"
+msgstr ""
+"Hola — Soy David Emery. Bienvenido a mi portafolio. Aquí tienes algunos de "
+"mis proyectos recientes:"
+
+msgid "Nothing added yet"
+msgstr "Aún no se ha agregado nada"
+
+msgid "Recent Projects"
+msgstr "Proyectos recientes"
+
+msgid "Contact Me"
+msgstr "Contáctame"
+
+msgid "Send a Message"
+msgstr "Enviar un Mensaje"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Clear"
+msgstr "Limpiar"
+
+msgid "Schedule an Appointment"
+msgstr "Programar una Cita"
+
+msgid "Confirm Appointment"
+msgstr "Confirmar Cita"
+
+msgid "Upcoming Appointments"
+msgstr "Próximas Citas"
+
+msgid "No appointments scheduled yet."
+msgstr "No hay citas programadas aún."
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Email"
+msgstr "Correo Electrónico"
+
+msgid "Message"
+msgstr "Mensaje"
+
+msgid ""
+"I am an aspiring Software Engineer with experience across a wide range of "
+"programming languages and a strong drive to keep learning and improving my "
+"craft."
+msgstr ""
+"Soy un aspirante a Ingeniero de Software con experiencia en una amplia gama "
+"de lenguajes de programación y un fuerte deseo de seguir aprendiendo y "
+"mejorando mis habilidades."
+
+msgid ""
+"Currently, I work as an Internet Sales Manager at a car dealership, where "
+"I've built excellent communication skills, attention to detail, and the "
+"ability to problem-solve in fast-paced environments."
+msgstr ""
+"Actualmente trabajo como Gerente de Ventas por Internet en un concesionario "
+"de autos, donde he desarrollado excelentes habilidades de comunicación, "
+"atención al detalle y la capacidad de resolver problemas en entornos de "
+"ritmo acelerado."
+
+msgid ""
+"Before my transition into tech, I proudly served as a Combat Engineer in the "
+"U.S. Army. This experience shaped my discipline, resilience, and commitment "
+"to overcoming challenges — qualities that fuel my growth as a developer."
+msgstr ""
+"Antes de mi transición al mundo tecnológico, serví con orgullo como "
+"Ingeniero de Combate en el Ejército de los Estados Unidos. Esta experiencia "
+"formó mi disciplina, resiliencia y compromiso para superar los desafíos, "
+"cualidades que impulsan mi crecimiento como desarrollador."
+
+msgid ""
+"Combining technical curiosity, military discipline, and strong customer-"
+"focused communication, I bring a unique perspective to every project and "
+"continue striving toward becoming the best software engineer I can be."
+msgstr ""
+"Combinando curiosidad técnica, disciplina militar y una fuerte comunicación "
+"orientada al cliente, aporto una perspectiva única a cada proyecto y sigo "
+"esforzándome por convertirme en el mejor ingeniero de software que pueda ser."
+
+msgid "Your message has been sent!"
+msgstr "¡Tu mensaje ha sido enviado!"
+
+msgid "Your appointment has been scheduled!"
+msgstr "¡Tu cita ha sido programada!"
+
+msgid "Greetings - I'm David Emery"
+msgstr "Saludos, soy David Emery"
+
+msgid ""
+"I'm a full-stack developer who enjoys creating modern, responsive, "
+"and clean web applications using Django, Python, and JavaScript. "
+"Explore my recent work, learn more about my background, "
+"or schedule an appointment."
+msgstr ""
+"Soy un desarrollador full-stack que disfruta creando aplicaciones web "
+"modernas, responsivas y limpias utilizando Django, Python y JavaScript. "
+"Explora mi trabajo reciente, conoce más sobre mi trayectoria "
+"o programa una cita."
+

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/skills_education.css' %}">
@@ -9,7 +10,7 @@
 <div class="skills-edu-wrapper">
 
     <section class="skills-section">
-        <h1 class="section-title">Skills</h1>
+        <h1 class="section-title">{% trans "Skills" %}</h1>
 
         <div class="skills-grid">
             {% for s in skills %}
@@ -24,7 +25,7 @@
     </section>
 
     <section class="education-section">
-        <h1 class="section-title">Education</h1>
+        <h1 class="section-title">{% trans "Education" %}</h1>
 
         <div class="edu-list">
             {% for e in education %}

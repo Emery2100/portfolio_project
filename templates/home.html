@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Home - My Portfolio{% endblock %}
+{% block title %}{% trans "Home" %} - {% trans "My Portfolio" %}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -18,27 +19,28 @@
              class="hero-image">
 
         <a href="{% static 'files/resume.docx' %}" download class="hero-resume-btn">
-            ⬇ Download Resume
+            ⬇ {% trans "Download Resume" %}
         </a>
     </div>
 
     <!-- Right: Text -->
     <div class="hero-right">
-        <h1 class="hero-title">Greetings - I'm David Emery</h1>
+        <h1 class="hero-title">{% trans "Greetings - I'm David Emery" %}</h1>
 
         <p class="hero-text">
+            {% blocktrans %}
             I'm a full-stack developer who enjoys creating modern,
             responsive, and clean web applications using Django, Python,
             and JavaScript. Explore my recent work, learn more about my
             background, or schedule an appointment.
-        </p>
+        {% endblocktrans %}</p>
     </div>
 
 </div>
 
 <hr class="home-divider">
 
-<h2 class="section-title">Recent Projects</h2>
+<h2 class="section-title">{% trans "Recent Projects" %}</h2>
 
 <div class="projects-grid">
     {% for p in recent_projects %}

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/projects.css' %}">
@@ -27,11 +28,11 @@
 
                 <div class="project-links">
                     {% if p.live_url %}
-                    <a href="{{ p.live_url }}" target="_blank" class="btn-project">Live Demo</a>
+                    <a href="{{ p.live_url }}" target="_blank" class="btn-project">{% trans "Live Demo" %}</a>
                     {% endif %}
 
                     {% if p.repo_url %}
-                    <a href="{{ p.repo_url }}" target="_blank" class="btn-project-outline">GitHub Repo</a>
+                    <a href="{{ p.repo_url }}" target="_blank" class="btn-project-outline">{% trans "GitHub Repo" %}</a>
                     {% endif %}
                 </div>
             </div>
