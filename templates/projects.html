@@ -9,7 +9,7 @@
 {% block content %}
 <div class="projects-wrapper">
 
-    <h1 class="projects-title">My Projects</h1>
+    <h1 class="projects-title">{% trans "My Projects" %}</h1>
 
     <div class="projects-grid">
         {% for p in projects %}
@@ -28,11 +28,15 @@
 
                 <div class="project-links">
                     {% if p.live_url %}
-                    <a href="{{ p.live_url }}" target="_blank" class="btn-project">{% trans "Live Demo" %}</a>
+                    <a href="{{ p.live_url }}" target="_blank" class="btn-project">
+                        {% trans "Live Demo" %}
+                    </a>
                     {% endif %}
 
                     {% if p.repo_url %}
-                    <a href="{{ p.repo_url }}" target="_blank" class="btn-project-outline">{% trans "GitHub Repo" %}</a>
+                    <a href="{{ p.repo_url }}" target="_blank" class="btn-project-outline">
+                        {% trans "GitHub Repo" %}
+                    </a>
                     {% endif %}
                 </div>
             </div>
@@ -43,3 +47,4 @@
 
 </div>
 {% endblock %}
+

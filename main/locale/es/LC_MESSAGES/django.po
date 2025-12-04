@@ -55,7 +55,7 @@ msgid "Nothing added yet"
 msgstr "Aún no se ha agregado nada"
 
 msgid "Recent Projects"
-msgstr "Proyectos recientes"
+msgstr "Proyectos Recientes"
 
 msgid "Contact Me"
 msgstr "Contáctame"
@@ -72,6 +72,9 @@ msgstr "Limpiar"
 msgid "Schedule an Appointment"
 msgstr "Programar una Cita"
 
+msgid "Schedule Appointment"
+msgstr "Programar Cita"
+
 msgid "Confirm Appointment"
 msgstr "Confirmar Cita"
 
@@ -80,6 +83,9 @@ msgstr "Próximas Citas"
 
 msgid "No appointments scheduled yet."
 msgstr "No hay citas programadas aún."
+
+msgid "No appointments yet."
+msgstr "Aún no hay citas."
 
 msgid "Name"
 msgstr "Nombre"
@@ -137,14 +143,52 @@ msgstr "¡Tu cita ha sido programada!"
 msgid "Greetings - I'm David Emery"
 msgstr "Saludos, soy David Emery"
 
+msgid "My Projects"
+msgstr "Mis Proyectos"
+
+msgid "Live Demo"
+msgstr "Demostración en Vivo"
+
+msgid "GitHub Repo"
+msgstr "Repositorio de GitHub"
+
+msgid "Contact & Schedule"
+msgstr "Contacto y Programación"
+
+msgid "Selected Date & Time"
+msgstr "Fecha y Hora Seleccionadas"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Choose a time:"
+msgstr "Elige una hora:"
+
+msgid "Your Name"
+msgstr "Tu Nombre"
+
+msgid "Your Email"
+msgstr "Tu Correo Electrónico"
+
+msgid "BOOKED"
+msgstr "RESERVADO"
+
+msgid "Portrait of David Emery"
+msgstr "Retrato de David Emery"
+
+msgid "View Projects"
+msgstr "Ver Proyectos"
+
+msgid "No projects added yet."
+msgstr "No se han agregado proyectos aún."
+
 msgid ""
-"I'm a full-stack developer who enjoys creating modern, responsive, "
-"and clean web applications using Django, Python, and JavaScript. "
-"Explore my recent work, learn more about my background, "
-"or schedule an appointment."
+"I'm a full-stack developer who enjoys creating modern, "
+"responsive, and clean web applications using Django, Python, "
+"and JavaScript. Explore my recent work, learn more about my "
+"background, or schedule an appointment."
 msgstr ""
 "Soy un desarrollador full-stack que disfruta creando aplicaciones web "
 "modernas, responsivas y limpias utilizando Django, Python y JavaScript. "
 "Explora mi trabajo reciente, conoce más sobre mi trayectoria "
 "o programa una cita."
-

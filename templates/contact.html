@@ -7,7 +7,6 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 
-<!-- FullCalendar v5 -->
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
 
@@ -17,7 +16,6 @@
 
 <div class="contact-layout">
 
-    <!-- CONTACT FORM -->
     <div class="contact-left">
         <h1>{% trans "Contact Me" %}</h1>
 
@@ -49,7 +47,7 @@
             </div>
         </form>
     </div>
-    <!-- APPOINTMENT SCHEDULING -->
+
     <div class="contact-right">
 
         <h1>{% trans "Schedule Appointment" %}</h1>
@@ -59,7 +57,6 @@
 
         <div id="calendar"></div>
 
-        <!-- Appointment Form -->
         <form method="POST" id="appointment-form" class="appointment-modern d-none">
             {% csrf_token %}
 
@@ -75,7 +72,6 @@
                 <select id="appt-time" class="time-select"></select>
             </div>
 
-            <!-- Django form fields (name, email, etc.) -->
             <div class="form-group-modern">
                 <label>{% trans "Your Name" %}</label>
                 {{ appointment_form.name }}
@@ -86,7 +82,6 @@
                 {{ appointment_form.email }}
             </div>
 
-            <!-- Hidden fields actually submitted -->
             <input type="hidden" name="date" id="appointment-date">
             <input type="hidden" name="time" id="appointment-time">
 
@@ -171,12 +166,10 @@ document.addEventListener("DOMContentLoaded", function () {
             select.appendChild(option);
         });
 
-        // Save selection to hidden field
         select.addEventListener("change", () => {
             document.getElementById("appointment-time").value = select.value;
         });
 
-        // Pre-select first available time
         const firstAvailable = allTimes.find(t => !bookedTimes.includes(t));
         if (firstAvailable) {
             select.value = firstAvailable;
@@ -188,7 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
 
-    // If Django view added ?success=1, we reset the form
     if (urlParams.get("success") === "1") {
         const apptForm = document.getElementById("appointment-form");
         if (apptForm) {

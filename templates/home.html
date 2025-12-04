@@ -12,10 +12,9 @@
 
 <div class="hero-container">
 
-    <!-- Left: Portrait + Resume Button -->
     <div class="hero-left">
         <img src="{% static 'img/Me.jpg' %}"
-             alt="Portrait of David Emery"
+             alt="{% trans 'Portrait of David Emery' %}"
              class="hero-image">
 
         <a href="{% static 'files/resume.docx' %}" download class="hero-resume-btn">
@@ -23,17 +22,17 @@
         </a>
     </div>
 
-    <!-- Right: Text -->
     <div class="hero-right">
         <h1 class="hero-title">{% trans "Greetings - I'm David Emery" %}</h1>
 
         <p class="hero-text">
-            {% blocktrans %}
+        {% blocktrans trimmed %}
             I'm a full-stack developer who enjoys creating modern,
             responsive, and clean web applications using Django, Python,
             and JavaScript. Explore my recent work, learn more about my
             background, or schedule an appointment.
-        {% endblocktrans %}</p>
+        {% endblocktrans %}
+        </p>
     </div>
 
 </div>
@@ -53,13 +52,14 @@
         <h3 class="project-title">{{ p.title }}</h3>
         <p class="project-summary">{{ p.summary|truncatechars:120 }}</p>
 
-        <a href="{% url 'projects' %}" class="project-btn">View Projects</a>
+        <a href="{% url 'projects' %}" class="project-btn">{% trans "View Projects" %}</a>
 
     </div>
     {% empty %}
-        <p>No projects added yet.</p>
+        <p>{% trans "No projects added yet." %}</p>
     {% endfor %}
 </div>
 
 {% endblock %}
+
 

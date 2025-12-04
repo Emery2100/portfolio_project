@@ -16,13 +16,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'main',
+    'modeltranslation',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -42,6 +43,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -71,13 +73,11 @@ DEFAULT_FROM_EMAIL = 'emery2100@gmail.com'
 
 LANGUAGE_CODE = 'en'
 
-USE_I18N = True
-
 LANGUAGES = [
     ('en', 'English'),
     ('es', 'Español'),
 ]
 
 LOCALE_PATHS = [
-    BASE_DIR / 'main'/'locale',
+    BASE_DIR / 'locale',
 ]
