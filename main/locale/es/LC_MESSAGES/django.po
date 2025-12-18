@@ -8,7 +8,7 @@ msgstr "Inicio"
 
 msgid "About"
 msgstr "Sobre mí"
-
+ 
 msgid "About Me"
 msgstr "Sobre mí"
 

@@ -24,3 +24,4 @@ class AppointmentForm(forms.ModelForm):
             if overlapping.exists():
                 raise ValidationError("This time conflicts with an existing appointment.")
         return cleaned
+ 

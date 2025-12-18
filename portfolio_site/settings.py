@@ -77,7 +77,7 @@ LANGUAGES = [
     ('en', 'English'),
     ('es', 'Español'),
 ]
-
+ 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
